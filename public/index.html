@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="container">
+        <h1 class="logo">Notis</h1>
+      </div>
+    </nav>
+
+    <form class="note">
+
+      <input type="text" name="title" class="note__title" placeholder="Title">
+      <textarea name="content" rows="3" class="note__description" placeholder='Take a note...'></textarea>
+      <button class="note__submit" type="submit"><span class="material-icons">
+          add
+        </span></button>
+    </form>
+  </header>
+
+
+  <main class="main-container">
+    <div class="container">
+      <div class="grid">
+
+
+        <div class="card">
+          <h2 class="card__title">My Note</h2>
+          <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum sed hic dolorem
+            natus sidelectus obcaecati rem voluptas.
+          </p>
+
+          <div class="card__btns">
+            <button class="card__delete">
+              <span class="material-icons">
+                clear
+              </span>
+            </button>
+            <button class="card__edit">
+              <span class="material-icons">
+                create
+              </span> </button>
+          </div>
+        </div>
+
+
+      </div> <!-- END OF GRID-->
+    </div> <!-- WRAPPER-->
+  </main>
+  <script src="../src/JS/index.js"></script>
+</body>
+
+</html>

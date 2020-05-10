@@ -1,0 +1,44 @@
+.note {
+  margin: 2em auto;
+
+  max-width: 50rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: var(--background);
+  padding: 1em;
+  position: relative;
+
+  &__title,
+  &__description {
+    display: block;
+    width: 100%;
+    border: none;
+    font-family: inherit;
+  }
+  &__description {
+    font-size: 1.4rem;
+    resize: none;
+  }
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 0.6em;
+  }
+  &__submit {
+    border: none;
+
+    border-radius: 50%;
+    color: var(--background);
+    background: var(--primary);
+    width: 4rem;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: 0;
+    bottom: -1rem;
+  }
+}

@@ -1,0 +1,36 @@
+:root {
+  --background: #fffffe;
+  --headline: #272343;
+  --paragraph: #2d334a;
+  --button-text: #272343;
+  --stroke: #272343;
+  --primary: #ffd803;
+  --secondary: #e3f6f5;
+  --tertiary: #bae8e8;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+.main-container {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  grid-gap: 2em;
+}
