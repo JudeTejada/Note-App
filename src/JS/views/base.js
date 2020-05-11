@@ -5,7 +5,7 @@ export const elements = {
   btnAddNote: document.querySelector(".note__submit"),
   mainContainer: document.querySelector("#notes"),
   card: document.querySelector(".card"),
-  noteIcon: document.querySelector(".note__icon"),
+  noteIcon: document.querySelector(".note__submit--icon"),
 };
 
 export const getInputFields = () => {
@@ -16,4 +16,9 @@ export const getInputFields = () => {
     title,
     desc,
   };
+};
+
+export const clearInputFields = () => {
+  elements.noteTitle.value = "";
+  elements.noteContent.value = "";
 };

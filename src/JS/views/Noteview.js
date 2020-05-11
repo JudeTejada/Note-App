@@ -33,7 +33,6 @@ export const renderNote = (note) => {
   elements.mainContainer.insertAdjacentHTML("beforeend", markup);
 };
 
-//delete the note
 export const deleteNote = (parent) => {
   const parentContainer = parent.parentElement;
 

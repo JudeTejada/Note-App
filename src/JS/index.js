@@ -3,7 +3,7 @@ import Note from "./models/Note";
 import NoteLS from "./models/NoteLS";
 
 import * as noteView from "./views/noteview";
-import { elements, getInputFields } from "./views/base";
+import { elements, getInputFields, clearInputFields } from "./views/base";
 // GLOBAL CONTROLLER
 
 const state = {};
@@ -19,6 +19,7 @@ const noteController = (type = "new") => {
     if (isEmpty) alert("Please Fill out all the values");
 
     const { title, desc } = getInputFields();
+
     //create new object
     state.note = new Note(title, desc);
 
@@ -26,10 +27,11 @@ const noteController = (type = "new") => {
 
     state.noteLS.addNoteToLS(state.note);
     noteView.renderNote(state.note);
-  } else if (type === "old") {
+    clearInputFields();
   }
 };
-// DELET CONTROLLER
+
+// DELETE CONTROLLER
 const deleteController = (id, parent) => {
   //delete a single item
 
@@ -39,17 +41,15 @@ const deleteController = (id, parent) => {
   state.noteLS.deleteNoteFromLS(parseInt(id));
 };
 
-elements.formNote.addEventListener("submit", (e) => {
+// LISTENERS
+
+elements.formNote.addEventListener("click", (e) => {
   e.preventDefault();
 
-  noteController();
+  if (e.target.matches(".note__submit, .note__submit *")) {
+    noteController();
+  }
 });
-
-// EDIT CONTROLLER
-const updateController = () => {
-  //get all the notes
-  // const notes = Array.from(document.querySelectorAll(".card"));
-};
 
 // LISTENERS
 elements.mainContainer.addEventListener("click", (e) => {
@@ -57,19 +57,8 @@ elements.mainContainer.addEventListener("click", (e) => {
     const parentElement = e.target.closest(".card");
     deleteController(e.target.parentElement.dataset.id, parentElement);
   }
-
-  if (e.target.closest(".card__edit")) {
-    const title =
-      e.target.parentElement.parentElement.previousElementSibling
-        .previousElementSibling.textContent;
-    const body =
-      e.target.parentElement.parentElement.previousElementSibling.textContent;
-
-    const card = e.target.parentElement.parentElement.parentElement;
-    updateController(card);
-  }
 });
-//TESTING
+
 window.addEventListener("load", () => {
   //create a object
   state.noteLS = new NoteLS();

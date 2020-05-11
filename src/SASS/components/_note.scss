@@ -41,4 +41,8 @@
     right: 0;
     bottom: -1rem;
   }
+  &__edit {
+    @extend .note__submit;
+    background: #ff9800;
+  }
 }
